@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnv7biq5n2uaj"]
+
+[ext_resource type="Texture2D" path="res://00bcb6b2-8132-4b39-9f75-f85af6e27492 (1).jpg" id="1_8typ1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oaa3n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wmpp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ngtub"]
+texture = ExtResource("1_8typ1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rt85"]
+bg_color = Color(0.43831, 0.667071, 0.440499, 1)
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="PanelContainer" parent="."]
+material = SubResource("CanvasItemMaterial_oaa3n")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2wmpp")
+
+[node name="MarginContainer" type="MarginContainer" parent="Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Row" type="VBoxContainer" parent="Background/MarginContainer"]
+layout_mode = 2
+
+[node name="GameInfo" type="PanelContainer" parent="Background/MarginContainer/Row"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_ngtub")
+
+[node name="InputArea" type="PanelContainer" parent="Background/MarginContainer/Row"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1rt85")
